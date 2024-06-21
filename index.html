@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eSewa Payment Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <div class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md mt-8">
+    <h1 class="text-2xl font-bold mb-4">eSewa Payment Form</h1>
+    <div class="flex flex-wrap -mx-2">
+      <form
+        action="https://rc-epay.esewa.com.np/api/epay/main/v2/form"
+        method="POST"
+        target="_blank"
+        class="w-full px-2"
+      >
+        <div class="mb-4">
+          <label for="amount" class="block font-medium mb-1">Amount:</label>
+          <input
+            type="text"
+            id="amount"
+            name="amount"
+            value="500"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="tax_amount" class="block font-medium mb-1">Tax Amount:</label>
+          <input
+            type="text"
+            id="tax_amount"
+            name="tax_amount"
+            value="0"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="total_amount" class="block font-medium mb-1">Total Amount:</label>
+          <input
+            type="text"
+            id="total_amount"
+            name="total_amount"
+            value="500"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="transaction_uuid" class="block font-medium mb-1">Transaction UUID:</label>
+          <input
+            type="text"
+            id="transaction_uuid"
+            name="transaction_uuid"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="product_code" class="block font-medium mb-1">Product Code:</label>
+          <input
+            type="text"
+            id="product_code"
+            name="product_code"
+            value="EPAYTEST"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="product_service_charge" class="block font-medium mb-1">Product Service Charge:</label>
+          <input
+            type="text"
+            id="product_service_charge"
+            name="product_service_charge"
+            value="0"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="product_delivery_charge" class="block font-medium mb-1">Product Delivery Charge:</label>
+          <input
+            type="text"
+            id="product_delivery_charge"
+            name="product_delivery_charge"
+            value="0"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="success_url" class="block font-medium mb-1">Success URL:</label>
+          <input
+            type="text"
+            id="success_url"
+            name="success_url"
+            value="http://localhost:3001/complete-payment"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="failure_url" class="block font-medium mb-1">Failure URL:</label>
+          <input
+            type="text"
+            id="failure_url"
+            name="failure_url"
+            value="https://developer.esewa.com.np/failure"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="signed_field_names" class="block font-medium mb-1">Signed Field Names:</label>
+          <input
+            type="text"
+            id="signed_field_names"
+            name="signed_field_names"
+            value="total_amount,transaction_uuid,product_code"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="signature" class="block font-medium mb-1">Signature:</label>
+          <input
+            type="text"
+            id="signature"
+            name="signature"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="secret" class="block font-medium mb-1">Secret Key:</label>
+          <input
+            type="text"
+            id="secret"
+            name="secret"
+            value="8gBm/:&EnhH.1/q"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            value=" Pay with eSewa "
+            type="submit"
+            class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md cursor-pointer"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
